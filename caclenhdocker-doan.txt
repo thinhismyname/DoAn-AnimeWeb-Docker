@@ -1,0 +1,18 @@
+1. dong lệnh FROM nginx:1.23 la engine nginx về trước ở tren docker hub lam nen tang server cho code cua minh chay dc. 
+2. dong COPY ./ /usr/share/nginx/html  sau do copy toan bo ma nguon trong du an hien tai vao thu muc html cua nginx
+
+docker build -t html-demo . 
+-> dau . la images thuoc local -t la tag
+
+docker run -d -p 8000:80 <repository> or <image ID>
+-> -d la de docker chay duoi background (detached), 8000:80 thay doi cong 80 thanh 8000
+
+docker tag html-demo thinhismyname/animewebsite:v1.0
+-> docker tag <repository> username/imgname:tag 
+
+docker login 
+-> de push docker img to docker hub va docker login kieu nhu la yeu cau cua docker hub
+
+docker push thinhismyname/animewebsite:v1.0
+-> de day len docker hub
+
